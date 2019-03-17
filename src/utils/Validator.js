@@ -1,4 +1,6 @@
 import livr from 'livr';
+import { phone } from 'src/utils/customRules';
+
 
 const ValidationResult = (isValid = true, errorMessage = '') => ({ isValid, errorMessage });
 
@@ -11,11 +13,7 @@ const Validator = (function (defaultRules = {}) {
     this.validators = {};
   };
 
-  validator.registerAliasedRule({
-    name: 'phone_number',
-    rules: ['required', { length_equal: 10 }],
-    error: 'WRONG_PHONE_TYPE',
-  });
+  validator.registerAliasedRule(phone);
 
   function validate(data, rules) {
     if (!rules) throw new Error('Data and rules in validate method cannot be empty!');
