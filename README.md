@@ -1,5 +1,5 @@
 # Test task for SoftIndex
-## Task description:
+### Task description:
 Create Single Page Application that includes form for user creating and table with the users.
 
 Form. It has to include next fields:
@@ -14,13 +14,14 @@ Table. It should have sorting by every field, records removing. Data should save
 Stack: Reach, Less, Babel, Eslint, Git, Webpack, Express, Livr
 
 
-## Run project on local server common settings
+### Run project on a local server
+#### Common settings
 1. `cp config.json.sample config.json`
 2. `npm install`
 
-### For development mode use command
+#### For development mode use command
 3. `npm run start:development`
 
-### For production mode use commands
+#### For production mode use commands
 3. `npm run build`
 4. `npm run start:production`

@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import 'src/index.less';
 
 import Form from 'src/components/Form';
-import Table from 'src/components/Table';
+import Table from 'src/components/table/Table';
 
 export default class App extends React.Component {
   state = {
@@ -25,10 +25,10 @@ export default class App extends React.Component {
     const { users } = this.state;
 
     return (
-      <dib className='index'>
+      <div className='index'>
         <Form onAddUser={this.addUser} />
         <Table users={users} removeUser={this.removeUser} />
-      </dib>
+      </div>
     );
   }
 }

@@ -107,7 +107,8 @@ export default class Form extends React.Component {
     return (
       <div className='Form'>
         {this.fields.map((fieldName, index) => (
-          <TextField type='text'
+          <TextField key={`form${index}`}
+                     type='text'
                      className='textField'
                      name={fieldName}
                      label={fieldName.capitalize()}
