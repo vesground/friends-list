@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
+// import
 
 import 'src/components/Form.less';
 
@@ -11,6 +12,8 @@ import { deepCopy } from 'src/components/utils';
 export default class Form extends React.Component {
   static propTypes = {
     onAddUser: PropTypes.func.isRequired,
+    onHideForm: PropTypes.func.isRequired,
+    isFormOpen: PropTypes.bool.isRequired,
   }
 
   fields = ['name', 'surname', 'age', 'phone'];
@@ -103,13 +106,15 @@ export default class Form extends React.Component {
 
   render() {
     const { formData, validations } = this.state;
-
+    const { onHideForm, isFormOpen } = this.props;
+    const formClasses = isFormOpen ? 'Form' : 'Form hide';
+    
     return (
-      <div className='Form'>
+      <div className={formClasses}>
         {this.fields.map((fieldName, index) => (
           <TextField key={`form${index}`}
                      type='text'
-                     className='textField'
+                     className='form__textField'
                      name={fieldName}
                      label={fieldName.capitalize()}
                      value={formData[fieldName]}
@@ -117,12 +122,20 @@ export default class Form extends React.Component {
                      onChange={this.changeFormData}
                      helperText={validations[fieldName].errorMessage} />
         ))}
-        <Button variant='contained'
-                color='primary'
-                style={{ margin: '1px' }}
-                onClick={this.submitForm}>
-          Send
-        </Button>
+        <div className='form__buttons'>
+          <Button variant='contained'
+                  color='secondary'
+                  className='form__button'
+                  onClick={onHideForm}>
+            Hide
+          </Button>
+          <Button variant='contained'
+                  color='primary'
+                  className='form__button'
+                  onClick={this.submitForm}>
+            Add
+          </Button>
+        </div>
       </div>
     );
   }

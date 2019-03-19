@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import 'src/components/table/Table.less'
+import 'src/components/table/TableHead.less'
 
 import {
   TableHead,
@@ -9,6 +9,7 @@ import {
   TableCell,
   Tooltip,
   TableSortLabel,
+  Checkbox,
 } from '@material-ui/core';
 
 const columns = [
@@ -33,7 +34,7 @@ export default class UsersTable extends React.Component {
   // }
 
   render() {
-    const { sortBy, order } = this.props;
+    const { sortBy, order, selectedRowsCount, rowsPerPage, onSelectAllClick } = this.props;
     const fontSize = { fontSize: '1rem' };
 
     return (
