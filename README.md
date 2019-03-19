@@ -1,17 +1,17 @@
-# Test task for SoftIndex
+# Friends list
 ### Task description:
-Create Single Page Application that includes form for user creating and table with the users.
+Create Single Page Application that includes a form for friends creating and table  with displaying it.
 
 Form. It has to include next fields:
   * First Name (string)
   * Last Name (string)
-  * Phone (string)
   * Age (number)
+  * Phone (string)
 Every input should have validation and errors preview. Form can be submitted only when there are any errors. After submitting form have to be cleared.
 
-Table. It should have sorting by every field, records removing. Data should save in localStorage.
+Table. It should have sorting by every field in different order, records removing. Data should be saved in localStorage.
 
-Stack: Reach, Less, Babel, Eslint, Git, Webpack, Express, Livr
+Stack: Reach, Html5, Less, Babel, Eslint, Git, Webpack, Express, Livr
 
 
 ### Run project on a local server
