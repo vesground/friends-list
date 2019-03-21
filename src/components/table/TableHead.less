@@ -1,0 +1,36 @@
+@import "../../common/styles/variables.less";
+
+@media screen {
+  .head {
+    .head__row {
+      color: inherit;
+      display: table-row;
+      outline: none;
+      vertical-align: middle;
+      height: 62px;
+
+      .head__cell {
+        color: rgba(0, 0, 0, 0.54);
+        font-size: 1rem;
+        font-weight: 500;
+        display: table-cell;
+        padding: 4px 56px 4px 24px;
+        text-align: left;
+        border-bottom: 1px solid rgba(224, 224, 224, 1);
+        vertical-align: inherit;
+      }
+    }
+  }
+
+  @media (max-width: 650px) {
+    .head .head__row .head__cell {
+      .mediumTableCell
+    }
+  }
+
+  @media (max-width: 400px) {
+    .head .head__row .head__cell {
+      .smallTableCell
+    }
+  }
+}
