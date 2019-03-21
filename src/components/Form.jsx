@@ -6,8 +6,8 @@ import PropTypes from 'prop-types';
 import 'src/components/Form.less';
 
 import { TextField, Button, Icon } from '@material-ui/core';
-import Validator, { ValidationResult } from 'src/utils/Validator';
-import { deepCopy } from 'src/components/utils';
+import Validator, { ValidationResult } from 'src/common/utils/Validator';
+import { deepCopy } from 'src/common/utils/utils';
 
 export default class Form extends React.Component {
   static propTypes = {
@@ -22,7 +22,7 @@ export default class Form extends React.Component {
     name: ['required', 'string'],
     surname: ['required', 'string'],
     age: ['required', 'positive_integer', { number_between: [0, 122] }],
-    phone: 'phone_number',
+    phone: ['required', 'phone_number', { length_equal: 12 }],
   };
 
   state = {
@@ -107,8 +107,8 @@ export default class Form extends React.Component {
   render() {
     const { formData, validations } = this.state;
     const { onHideForm, isFormOpen } = this.props;
-    const formClasses = isFormOpen ? 'Form' : 'Form hide';
-    
+    const formClasses = isFormOpen ? 'Form' : 'Form hidden';
+
     return (
       <div className={formClasses}>
         {this.fields.map((fieldName, index) => (
