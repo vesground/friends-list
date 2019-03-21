@@ -20,7 +20,7 @@ class App extends React.Component {
 
   state = {
     users: [],
-    isFormOpen: true,
+    isFormOpen: false,
   }
 
   componentWillUnmount() {
