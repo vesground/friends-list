@@ -2,15 +2,24 @@
     parser :  babel-eslint ,
     extends :  airbnb ,
     rules : {
-    indent : [error, 4, {ignoredNodes : [ JSXAttribute, JSXSpreadAttribute]}],
+    indent : [error, 2, {ignoredNodes : [ JSXAttribute, JSXSpreadAttribute]}],
     react/jsx-indent : 0,
     no-undef : 1,
     jsx-a11y/alt-text: 0,
     jsx-quotes : [ error ,  prefer-single ],
     no-unused-vars : 0,
     prefer-template: 1,
+    no-extend-native: 1,
     import/no-unresolved: 1,
     react/button-has-type: 0,
+    react/no-array-index-key: 1,
+    jsx-a11y/click-events-have-key-events: 0,
+    jsx-a11y/interactive-supports-focus: 0,
+    jsx-a11y/no-static-element-interactions: 0,
+    operator-linebreak: ["error", "before"],
+    react/jsx-wrap-multilines: 0,
+    object-curly-newline: ["error", { "multiline": true }],
+    react/jsx-one-expression-per-line: [<enabled>, {allow: "single-child" }],
     react/jsx-no-comment-textnodes: 0,
     react/jsx-indent-props: [error, first],
     react/jsx-first-prop-new-line: [error, never],
@@ -18,5 +27,5 @@
         selfClosing :  after-props
     }],
     max-len : [1, 120, 2, {ignoreComments: true}]
-    }
+    },
 }
