@@ -1,5 +1,4 @@
 {
   "host": "localhost",
-  "port": "9000",
-  "assetsUrl": "http://localhost:9000/statics/",
+  "port": "9000"
 }
